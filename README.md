@@ -6,3 +6,4 @@ OBS: They were mainly written in Portuguese
 
 - `pc.c`: Takes two sets, _A_ and _B_, and prints the cartesian products **_A x B_** and **_B x A_**.
 - `rel.py`: Takes an _A_ set, creates **_A x A_** and **_P(A x A)_**, classifies each subset of _A x A_ as **reflexive**, **simetric**, **transitive** and **equivalent** and outputs everything onto a text file.
+- `base.py`: Collection of number base conversion functions. Available number bases: BIN (base-2), OCT (base-8), DEC (base-10) and HEX (base-16).
