@@ -1,23 +1,13 @@
-# Fazer programa que classifica um conjunto (lista) e imprime:
+###############################
+#  CLASSIFICAÇÃO DE RELAÇÕES  #
+###############################
 
-# A x A (produto cartesiano de A com A)
-# P(A x A) (partes de A x A)
-# Classificação de cada elemento de P(A x A) (classificar cada elemento em R (reflexivo), S (simétrico), T (transitivo) e, possivelmente, E (equivalente))
-
-# OBS: a saída deve ser em um arquivo
-
-
-
-# Ex: > classifica([1,2])
-
-# SAÍDA...
-# Produto cartesiano = [(1,1), (1,2), (2,1), (2,2)]
-# Partes = [[], [(1,1)], [(1,2)], ...]
-# []: ST
-# [(1,1)]: ST
-# .
-# .
-# .
+# Dado um conjunto A, o programa calcula:
+# 
+# - A x A
+# - P(A x A)
+#
+# e classifica cada elemento de P(A x A) como uma relação
 
 from time import time
 
@@ -84,20 +74,24 @@ def classificar(conj, rel):
 
 ##############################################################################################################################################
 
-antes = time()                                                                       # Tempo inicial
+# Função principal
+def main():
+    antes = time()                                                                       # Tempo inicial
 
-S = [1, 2, 3, 4, 5]
-SxS = prod_cart(S)
-P_SxS = partes(SxS)
+    S = [1, 2, 3]
+    SxS = prod_cart(S)
+    P_SxS = partes(SxS)
 
-file = open("relacao.txt", "w")
-file.write("S : {}\n".format(S))
-file.write("S x S : {}\n".format(SxS))
-file.write("P_SxS : {}\n\n".format(P_SxS))
+    file = open("relacao.txt", "w")
+    file.write("S : {}\n".format(S))
+    file.write("S x S : {}\n".format(SxS))
+    file.write("P(S x S) : {}\n\n".format(P_SxS))
+ 
+    for elem in P_SxS:
+        file.write("{} : {}\n".format(elem, classificar(S, elem)))
 
-for elem in P_SxS:
-    file.write("{} : {}\n".format(elem, classificar(S, elem)))
+    depois = time()                                                                      # Tempo final
 
-depois = time()                                                                      # Tempo final
+    print(f"TEMPO = {depois - antes} s")                                                 # Tempo decorrido
 
-print(f"TEMPO = {depois - antes} s")                                                 # Tempo decorrido
+main()
