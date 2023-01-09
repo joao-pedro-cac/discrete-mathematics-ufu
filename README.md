@@ -1,6 +1,6 @@
 # Discrete Mathematics
 
-This repository keeps all the codes of Discrete Mathematics classes taken as a student of the _Universidade Federal de Uberlândia_ (Federal University of Uberlândia).
+This repository keeps all the codes of Discrete Mathematics classes taken as a student of _Universidade Federal de Uberlândia_ (Federal University of Uberlândia).
 
 OBS: They were mainly written in Portuguese
 
